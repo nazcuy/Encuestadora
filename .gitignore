@@ -1,0 +1,64 @@
+# --- GENERAL ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.swp
+
+# --- DEPENDENCIAS (Node.js / React / Vue / Angular / Express) ---
+node_modules/
+jspm_packages/
+web_modules/
+
+# --- ARCHIVOS DE ENTORNO (SECRETOS) ---
+# ¡Nunca subas tus llaves API o contraseñas!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# --- FRONTEND (Build artifacts) ---
+dist/
+build/
+.next/
+out/
+.svelte-kit/
+.cache/
+bower_components/
+
+# --- BACKEND (Específicos) ---
+# Si usas Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+.venv/
+
+# Si usas Java/Maven/Gradle
+target/
+.gradle/
+build/
+
+# Si usas Logs o bases de datos locales
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+data/
+*.sqlite
+
+# --- OTROS ---
+coverage/
+.nyc_output/
+.serverless/
+
+# Específicos de este proyecto
+backend/chrome/
+backend/.wwebjs_cache/
+backend/.wwebjs_auth/
+**/chrome-win64/
