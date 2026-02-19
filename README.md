@@ -1,14 +1,13 @@
-# 📊 WhatsApp Poll Sender
+# 📊 PollSender
 
 <div align="center">
 
-![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-## Automatiza el envío de encuestas a múltiples grupos de WhatsApp simultáneamente
+## Automatiza el envío de encuestas a múltiples grupos de app de mensajería simultáneamente
 
 [Demo](#-demo) • [Características](#-características-principales) • [Instalación](#-instalación) • [Tecnologías](#️-tecnologías)
 ---
@@ -17,7 +16,7 @@
 
 ## 🎯 Descripción
 
-**WhatsApp Poll Sender** es una solución robusta *Full-Stack* diseñada para transformar la comunicación unidireccional en una herramienta de gestión de datos y toma de decisiones en tiempo real. Aunque es versátil para diversos sectores, su arquitectura está optimizada para entornos de **Seguridad e Higiene (SySO)** y **Recursos Humanos**, donde la verificación de la formación y el cumplimiento de normas es crítica.
+**PollSender** es una solución robusta *Full-Stack* diseñada para transformar la comunicación unidireccional en una herramienta de gestión de datos y toma de decisiones en tiempo real. Aunque es versátil para diversos sectores, su arquitectura está optimizada para entornos de **Seguridad e Higiene (SySO)** y **Recursos Humanos**, donde la verificación de la formación y el cumplimiento de normas es crítica.
 
 La aplicación permite a técnicos y coordinadores desplegar encuestas dinámicas a múltiples grupos operativos de forma simultánea, eliminando la carga administrativa del envío manual y centralizando el monitoreo del proceso mediante WebSockets para una trazabilidad total.
 
@@ -28,12 +27,12 @@ La aplicación permite a técnicos y coordinadores desplegar encuestas dinámica
 * **Validación de Formación SySO:** Ideal para realizar exámenes rápidos o "charlas de 5 minutos" digitales, asegurando que el personal operativo ha comprendido los riesgos de su sector.
 * **Eficiencia en Terreno:** Permite a los técnicos obtener feedback inmediato de sectores específicos (como Maquinistas o personal de Mantenimiento) sin necesidad de traslados físicos.
 * **Monitoreo en Tiempo Real:** Gracias a la integración con **Socket.io**, el usuario recibe un flujo constante de logs que confirman el éxito de cada envío, garantizando que nadie quede fuera de la capacitación.
-* **Privacidad Corporativa:** Al utilizar una instancia local de **Puppeteer**, la sesión de WhatsApp y los datos de los grupos permanecen exclusivamente en la infraestructura del usuario, cumpliendo con estándares de confidencialidad.
+* **Privacidad Corporativa:** Al utilizar una instancia local de **Puppeteer**, la sesión de la app de mensajería y los datos de los grupos permanecen exclusivamente en la infraestructura del usuario, cumpliendo con estándares de confidencialidad.
 * **Interfaz Profesional:** Diseñada con **TailwindCSS** para ofrecer una experiencia de usuario (UX) moderna, intuitiva y completamente responsive.
 
 ### Características Principales
 
--  **Conexión directa con WhatsApp Web** mediante QR
+-  **Conexión directa con app de mensajería** mediante QR
 -  **Creación de encuestas personalizadas** (hasta 12 opciones)
 -  **Envío masivo** a múltiples grupos simultáneamente
 -  **Vista previa de grupos** disponibles en tiempo real
@@ -63,23 +62,23 @@ Es el uso principal para técnicos y licenciados que necesitan verificar el cono
 ## 📸 Demo
 
 ### Conexión y QR
-- Escanea el código QR con tu WhatsApp para vincular la sesión
+- Escanea el código QR con tu app de mensajería para vincular la sesión
 
 ![QR Connection](/screenshots/QRconnection.png)
 
 ### Panel Principal
 - Vista previa de grupos disponibles y logs en tiempo real
 
-![WhatsApp Poll Sender Dashboard](/screenshots/dashboard.png)
+![PollSender Dashboard](/screenshots/dashboard.png)
 
 ### Envío de Encuestas
 - Envío de encuesta a múltiples grupos con un solo clic
 
 ![Encuesta Enviada](/screenshots/encuestaEnviadaFront.png)
 
-- Pantalla de WhatsApp mostrando la encuesta enviada al grupo
+- Pantalla de app de mensajería mostrando la encuesta enviada al grupo
 
-![Encuesta Enviada - pantalla WhatsApp](/screenshots/encuestaEnviada.png)
+![Encuesta Enviada - pantalla app de mensajería](/screenshots/encuestaEnviada.png)
 
 
 ## 🛠️ Tecnologías
@@ -88,7 +87,7 @@ Es el uso principal para técnicos y licenciados que necesitan verificar el cono
 - **Node.js** - Runtime de JavaScript
 - **Express.js** - Framework web minimalista
 - **Socket.io** - Comunicación bidireccional en tiempo real
-- **whatsapp-web.js** - Interacción con WhatsApp Web
+- **whatsapp-web.js** - Interacción con app de mensajería Web
 - **Puppeteer** - Automatización de navegador headless
 - **CORS** - Manejo de peticiones cross-origin
 
@@ -117,8 +116,8 @@ Google Chrome instalado
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/whatsapp-poll-sender.git
-cd whatsapp-poll-sender
+git clone https://github.com/nazcuy/Encuestadora.git
+cd Encuestadora
 ```
 
 ### 2. Instalar dependencias del Backend
@@ -164,11 +163,11 @@ http://localhost:5173
 
 ## 📖 Uso
 
-### Primer Uso - Vincular WhatsApp
+### Primer Uso - Vincular app de mensajería
 
 1. Inicia el backend y frontend
 2. Espera 30-60 segundos a que aparezca el código QR
-3. Abre WhatsApp en tu teléfono
+3. Abre la app de mensajería en tu teléfono
 4. Ve a **Configuración → Dispositivos vinculados**
 5. Toca **"Vincular un dispositivo"**
 6. Escanea el código QR mostrado en pantalla
@@ -198,21 +197,21 @@ http://localhost:5173
 
 ```
 ┌─────────────┐         WebSocket          ┌─────────────┐
-│             │◄─────────────────────────►│             │
+│             │◄──────────────────────────►│             │
 │   Frontend  │         Socket.io          │   Backend   │
 │   (React)   │                            │  (Node.js)  │
 │             │         HTTP/REST          │             │
-│             │◄─────────────────────────►│             │
+│             │◄──────────────────────────►│             │
 └─────────────┘                            └──────┬──────┘
                                                   │
                                                   │ Puppeteer
                                                   │
-                                           ┌──────▼──────┐
-                                           │             │
-                                           │  WhatsApp   │
-                                           │     Web     │
-                                           │             │
-                                           └─────────────┘
+                                           ┌──────▼───────────────┐
+                                           │                      │
+                                           │  App de mensajería   │
+                                           │     Web              │
+                                           │                      │
+                                           └──────────────────────┘
 ```
 
 ### Flujo de Datos
@@ -220,7 +219,7 @@ http://localhost:5173
 1. **Usuario** crea encuesta en la interfaz React
 2. **Frontend** emite evento Socket.io al backend
 3. **Backend** recibe solicitud y procesa con whatsapp-web.js
-4. **Puppeteer** controla instancia de Chrome con WhatsApp Web
+4. **Puppeteer** controla instancia de Chrome con aplicación de mensajería Web
 5. **Backend** envía encuesta a cada grupo especificado
 6. **Logs en tiempo real** se envían al frontend vía WebSocket
 7. **Frontend** muestra progreso y resultados al usuario
@@ -228,7 +227,7 @@ http://localhost:5173
 ## 📁 Estructura del Proyecto
 
 ```
-whatsapp-poll-sender/
+Encuestadora/
 ├── backend/
 │   ├── server.js              # Servidor principal
 │   ├── package.json           # Dependencias backend
@@ -355,7 +354,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 🙏 Agradecimientos
 
-- [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) - Biblioteca principal para interactuar con WhatsApp
+- [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) - Biblioteca principal para interactuar con app de mensajería Web
 - [Puppeteer](https://pptr.dev/) - Automatización de navegador
 - [Socket.io](https://socket.io/) - Comunicación en tiempo real
 - [TailwindCSS](https://tailwindcss.com/) - Framework CSS
@@ -380,6 +379,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 **⚡ Stack Principal:** Node.js • React • Socket.io • Puppeteer
 
-**🛠️ Ecosistema:** Express • TailwindCSS • Vite • WhatsApp-web.js
+**🛠️ Ecosistema:** Express • TailwindCSS • Vite
 
 </div>

@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-poll-sender-backend",
+  "name": "pollsender-backend",
   "version": "1.0.0",
   "description": "Backend para envío de encuestas a grupos de WhatsApp",
   "main": "server.js",
@@ -8,11 +8,11 @@
     "dev": "nodemon server.js"
   },
   "keywords": [
-    "whatsapp",
     "poll",
-    "automation"
+    "automation",
+    "messaging-app"
   ],
-  "author": "Matrix Agent",
+  "author": "Nicolás Azcuy",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.6",
