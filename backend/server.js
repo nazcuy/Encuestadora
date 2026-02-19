@@ -1,5 +1,5 @@
 /**
- * WhatsApp Poll Sender - Backend Server (CORREGIDO)
+ * WhatsApp Poll Sender - Backend Server
  * Stack: Node.js + Express + Socket.io + whatsapp-web.js
  */
 
