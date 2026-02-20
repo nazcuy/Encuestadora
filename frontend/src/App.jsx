@@ -1,5 +1,5 @@
 /**
- * WhatsApp Poll Sender - Frontend App (CORREGIDO)
+ * Poll Sender - Frontend App
  * Stack: React + Vite + TailwindCSS + Socket.io-client + qrcode.react
  */
 
@@ -50,7 +50,7 @@ function App() {
       
       // ⚠️ AUTO-INICIALIZAR CLIENTE AL CONECTARSE
       setTimeout(() => {
-        addLog('info', '🚀 Iniciando conexión con WhatsApp...');
+        addLog('info', '🚀 Iniciando conexión con App de mensajería...');
         newSocket.emit('init-client');
       }, 1000);
     });
@@ -71,24 +71,24 @@ function App() {
     newSocket.on('qr', (qr) => {
       setQrCode(qr);
       setIsWhatsAppReady(false);
-      addLog('info', '📱 Código QR recibido. Escanea con WhatsApp.');
+      addLog('info', '📱 Código QR recibido. Escanea con App de mensajería.');
     });
 
     newSocket.on('ready', () => {
       setIsWhatsAppReady(true);
       setQrCode(null);
-      addLog('success', '✅ WhatsApp conectado y listo para enviar encuestas!');
+      addLog('success', '✅ App de mensajería conectada y listo para enviar encuestas!');
     });
 
     newSocket.on('disconnected', (data) => {
       setIsWhatsAppReady(false);
-      addLog('warning', `⚠️ WhatsApp desconectado: ${data.reason}`);
+      addLog('warning', `⚠️ App de mensajería desconectada: ${data.reason}`);
     });
 
     newSocket.on('logged-out', () => {
       setIsWhatsAppReady(false);
       setQrCode(null);
-      addLog('info', '👋 Sesión de WhatsApp cerrada.');
+      addLog('info', '👋 Sesión de App de mensajería cerrada.');
     });
 
     newSocket.on('log', (logEntry) => {
@@ -112,7 +112,7 @@ function App() {
     });
 
     newSocket.on('loading', (data) => {
-      addLog('info', `📊 WhatsApp cargando: ${data.percent}% - ${data.message}`);
+      addLog('info', `📊 App de mensajería cargando: ${data.percent}% - ${data.message}`);
     });
 
     newSocket.on('retry-init', () => {
@@ -143,11 +143,11 @@ function App() {
     ]);
   };
 
-  // Inicializar cliente de WhatsApp (manual)
+  // Inicializar cliente de aplicación de mensajería (manual)
   const handleInitClient = () => {
     if (socket) {
       setQrCode(null);
-      addLog('info', '🔄 Reiniciando conexión con WhatsApp...');
+      addLog('info', '🔄 Reiniciando conexión con App de mensajería...');
       socket.emit('init-client');
     }
   };
@@ -190,7 +190,7 @@ function App() {
   // Enviar encuesta
   const handleSendPoll = () => {
     if (!socket || !isWhatsAppReady) {
-      addLog('error', '❌ WhatsApp no está conectado.');
+      addLog('error', '❌ App de mensajería no está conectada.');
       return;
     }
 
@@ -270,7 +270,7 @@ function App() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-bold">WhatsApp Poll Sender</h1>
+                <h1 className="text-xl font-bold">Poll Sender</h1>
                 <p className="text-sm text-gray-400">Envía encuestas a múltiples grupos</p>
               </div>
             </div>
@@ -280,7 +280,7 @@ function App() {
               <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></div>
               <span className="text-sm">
                 {isConnected ? (
-                  isWhatsAppReady ? '✅ WhatsApp Listo' : '⏳ Conectando WhatsApp...'
+                  isWhatsAppReady ? '✅ App de mensajería Listo' : '⏳ Conectando App de mensajería...'
                 ) : '❌ Sin conexión'}
               </span>
             </div>
@@ -292,13 +292,13 @@ function App() {
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Panel izquierdo - Estado y Logs */}
           <div className="space-y-6">
-            {/* Estado de WhatsApp */}
+            {/* Estado de App de mensajería */}
             <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
               <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
-                Estado de WhatsApp
+                Estado de App de mensajería
               </h2>
 
               {!isWhatsAppReady && !qrCode && (
@@ -309,19 +309,19 @@ function App() {
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                   </div>
-                  <p className="text-gray-300 mb-4">Iniciando WhatsApp...</p>
+                  <p className="text-gray-300 mb-4">Iniciando App de mensajería...</p>
                   <p className="text-sm text-gray-500">Esto puede tardar 30-60 segundos</p>
                 </div>
               )}
 
               {qrCode && !isWhatsAppReady && (
                 <div className="text-center">
-                  <p className="text-gray-300 mb-4">Escanea este código QR con WhatsApp</p>
+                  <p className="text-gray-300 mb-4">Escanea este código QR con App de mensajería</p>
                   <div className="inline-block p-4 bg-white rounded-xl">
                     <QRCodeSVG value={qrCode} size={256} />
                   </div>
                   <div className="mt-4 space-y-2">
-                    <p className="text-sm text-gray-400">1. Abre WhatsApp en tu teléfono</p>
+                    <p className="text-sm text-gray-400">1. Abre App de mensajería en tu teléfono</p>
                     <p className="text-sm text-gray-400">2. Ve a Configuración → Dispositivos vinculados</p>
                     <p className="text-sm text-gray-400">3. Toca "Vincular un dispositivo"</p>
                     <p className="text-sm text-gray-400">4. Escanea este código QR</p>
@@ -343,7 +343,7 @@ function App() {
                     </svg>
                   </div>
                   <p className="text-xl font-semibold text-green-400 mb-2">
-                    WhatsApp conectado correctamente
+                    App de mensajería conectada correctamente
                   </p>
                   <div className="flex gap-3 justify-center">
                     <button
@@ -510,7 +510,7 @@ function App() {
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all resize-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  💡 Escribe los nombres exactos de los grupos tal como aparecen en WhatsApp
+                  💡 Escribe los nombres exactos de los grupos tal como aparecen en tu app de mensajería
                 </p>
               </div>
 
@@ -544,7 +544,7 @@ function App() {
 
               {!isWhatsAppReady && (
                 <p className="text-center text-yellow-400 text-sm">
-                  ⚠️ Conecta WhatsApp primero para enviar encuestas
+                  ⚠️ Conecta App de mensajería primero para enviar encuestas
                 </p>
               )}
             </div>
@@ -554,7 +554,7 @@ function App() {
 
       {/* Footer */}
       <footer className="text-center text-gray-500 text-sm py-6">
-        WhatsApp Poll Sender v1.1 | Desarrollado con Node.js + React
+        Poll Sender v1.1 | Desarrollado con Node.js + React
       </footer>
     </div>
   );
