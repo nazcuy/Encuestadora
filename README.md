@@ -7,7 +7,7 @@
 ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-## Automatiza el envío de encuestas a múltiples grupos de app de mensajería simultáneamente
+## Automatiza el envío de encuestas a múltiples grupos de app de mensajería.
 
 [Demo](#-demo) • [Características](#-características-principales) • [Instalación](#-instalación) • [Tecnologías](#️-tecnologías)
 ---
